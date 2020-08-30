@@ -1,57 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import Login from './app/pages/login';
+import SingUp from './app/pages/sign_up';
+import Intro from './app/pages/intro/';
+import Selection from './app/pages/selection';
+import Profile from './app/pages/profile';
+import Feed from './app/pages/feed';
+import EditProfile from './app/pages/editProfile';
+import CompareProfiles from './app/pages/compareProfiles';
+import Chatlist from './app/pages/chatList';
+import Chat from './app/pages/chat';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/chat'>
+          <Chat />
+        </Route>
+        <Route path='/chat-lista'>
+          <Chatlist />
+        </Route>
+        <Route path='/feed'>
+          <Feed />
+        </Route>
+        <Route path='/perfil/comparar'>
+          <CompareProfiles />
+        </Route>
+        <Route path='/perfil/edit'>
+          <EditProfile />
+        </Route>
+        <Route path='/perfil'>
+          <Profile />
+        </Route>
+        <Route path='/selecao'>
+          <Selection />
+        </Route>
+        <Route path='/intro'>
+          <Intro />
+        </Route>
+        <Route path='/cadastro'>
+          <SingUp />
+        </Route>
+        <Route path='/'>
+          <Login />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
