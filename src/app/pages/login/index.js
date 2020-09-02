@@ -1,26 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ReduxLoginForm from '../../components/loginForm/LoginForm';
-import { setLoggedTrue } from '../../components/loginForm/LoginFormSlice';
-import { setUserData } from '../../components/users/UsersSlice';
 import loginCheck from '../../helpers/auth';
+import useTryToLoggin from '../../helpers/useTryToLoggin';
 
 const Login = () => {
     const loginForm = useSelector(state => state.form.loginForm);
     const [loginError, setLoginError] = useState(false);
     const [loginConfirmed, setLoginConfirmed] = useState(false);
 
-    const dispatch = useDispatch();
+    const [isLogged, setIsLogged] = useTryToLoggin();
 
     const tryToLogin = (result) => {
-        if (result.login) {
-            dispatch(setLoggedTrue({token: result.data.token}));
-            dispatch(setUserData(result.data));
-            setLoginConfirmed(true);
-            return;
-        }
-        setLoginError(true)
+        console.log(result);
+        setIsLogged(result);
     }
 
     const onSubmit = event => {
@@ -29,6 +23,17 @@ const Login = () => {
             loginCheck(loginForm.values, tryToLogin);
         }
     };
+
+    useEffect(() => {
+        if(isLogged.login !== undefined && !isLogged.login) {
+            setLoginError(true);
+            return;
+        }
+        if(isLogged.login) {
+            setLoginConfirmed(true);
+        }
+    }, [isLogged]);
+
     return (
         <section>
             <h1>Tribes</h1>

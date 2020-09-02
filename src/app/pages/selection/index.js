@@ -2,15 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { getTopicslist } from '../../queries';
-import { setTopicList } from '../../components/topics/topicsSlice';
+import { setTopicList, setSubsList } from '../../components/topics/topicsSlice';
 
 const Selection = () => {
     const [redirectFeedPage, setRedirectFeedPage] = useState(false);
+    const [errorMessage, setErrorMessage] = useState();
     const [searchText, setSearchText] = useState('');
     const [filteredTopics, setFilteredTopics] = useState([]);
     const [topicSublist, setTopicSublist] = useState([]);
     const dispatch = useDispatch();
     const topicsList = useSelector(state => state.topics.list[0]);
+
+    const handleSubmitTopics = () => {
+        if (!topicSublist.length) {
+            setErrorMessage('Inclua pelo menos um tópico para acompanhar.');
+            return;
+        }
+        dispatch(setSubsList(topicSublist));
+        setRedirectFeedPage(true);
+    }
 
     const topicHasBenAdded = topicId => topicSublist.find(t => t === topicId);
 
@@ -73,7 +83,9 @@ const Selection = () => {
                     ))
                 }
             </ul>
-            <button>Next</button>
+            {errorMessage && <span>{errorMessage}</span>}
+            {redirectFeedPage && <Redirect to="/perfil" />}
+            <button onClick={handleSubmitTopics}>Next</button>
         </div>
     );
 }

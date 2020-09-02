@@ -11,13 +11,13 @@ export const UsersSlice = createSlice({
         password2: null,
         token: null,
         facebookID: null,
-        hasInicialized: false
+        hasInicialized: false,
     },
     reducers: {
         setUserData: (state, action) => {
             state.id = action.payload.id;
             state.name = action.payload.name;
-            state.surNmae = action.payload.surNmae;
+            state.surNmae = action.payload.surName;
             state.email = action.payload.email;
             state.password = action.payload.password;
             state.password2 = action.payload.password2;

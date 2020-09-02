@@ -10,7 +10,8 @@
       "hasInicialized": false,
       "token": "78954312",
       "facebookID": "8791654",
-      "id": 1
+      "id": 1,
+      "topics": []
     },
     {
       "name": "roberto",
@@ -22,7 +23,8 @@
       "hasInicialized": false,
       "token": "78954312",
       "facebookID": "8791654",
-      "id": 2
+      "id": 2,
+      "topics": []
     }
   ],
   "topics": [
