@@ -1,17 +1,30 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import formValidation from '../../helpers/formValidation';
 
-const LoginForm = () => {
+const RenderInput = ({input, meta}) =>  (
+        <div>
+            <input {...input} />
+            <span>{meta.touched && meta.error}</span>
+        </div>
+);
+
+const LoginForm = ({ handleSubmit, valid }) => {
     return (
-        <form action='#'>
+        <form onSubmit={handleSubmit}>
             <label>Email:
-                <input type='email' name='email' /><br />
+                <Field type='email' component={RenderInput} name='email' validate={formValidation.email} /><br />
             </label>
             <label>Senha:
-                <input type='password' name='password' /><br />
+                <Field type='password' component={RenderInput} name='password' validate={formValidation.password} /><br />
             </label>
-            <input type='submit' value='login' />
+            <button disabled={!valid} type='submit'>Login</button>
         </form>
     );
 }
 
-export default LoginForm;
+const ReduxLoginForm = reduxForm({
+    form: 'loginForm',
+})(LoginForm);
+
+export default ReduxLoginForm;

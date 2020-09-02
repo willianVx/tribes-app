@@ -1,30 +1,43 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import formValidation from '../../helpers/formValidation';
 
-const SingupForm = () => {
+const RenderInput = ({input, meta}) =>  (
+    <div>
+        <input {...input} />
+        <span>{meta.touched && meta.error}</span>
+    </div>
+);
+
+const SingupForm = ({ handleSubmit, valid }) => {
     return (
-        <form action='#'>
+        <form onSubmit={handleSubmit}>
             <label>Nome
-                <input type='text' name='name' />
+                <Field type='text' component={RenderInput} name='name' validate={formValidation.name} />
             </label>
             <label>Sobrenome
-                <input type='text' name='surName' />
+                <Field type='text' component={RenderInput} name='surName' validate={formValidation.name} />
             </label>
             <label>Username
-                <input type='text' name='username' />
+                <Field type='text' component={RenderInput} name='username' validate={formValidation.name} />
             </label>
             <label>Email
-                <input type='email' name='email' />
+                <Field type='email' component={RenderInput} name='email' validate={formValidation.email} />
             </label>
             <label>Senha
-                <input type='password' name='password' />
+                <Field type='password' component={RenderInput} name='password' validate={formValidation.password} />
             </label>
             <label>Digite a senha novamente
-                <input type='password' name='password' />
+                <Field type='password' component={RenderInput} name='password2' validate={formValidation.password} />
             </label>
-            <input type='submit' value='cadastrar' />
-            <button>Login com facebook</button>
+            <button disabled={!valid} type='submit' >cadastrar</button>
+            <button >Login com facebook</button>
         </form>
     );
 }
 
-export default SingupForm;
+const SingupFormRedux = reduxForm({
+    form: 'signupForm'
+})(SingupForm)
+
+export default SingupFormRedux;
