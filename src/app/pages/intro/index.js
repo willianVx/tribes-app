@@ -5,6 +5,9 @@ import { setLoggedTrue } from '../../components/loginForm/LoginFormSlice';
 import { GetLocalStorage } from '../../helpers/localStorage';
 import loginCheck from '../../helpers/auth';
 import useTryToLoggin from '../../helpers/useTryToLoggin';
+import PresentationContainer from '../../components/presentationContainer';
+import HeaderLogo from '../../components/headerLogo';
+import TextintroContainer, { VerticalAlign, CircleIntro1, CircleIntro2, CircleIntro3, NextBar } from '../../components/textintroContainer';
 
 const Intro = () => {
     const userData = useSelector(state => state.users);
@@ -32,14 +35,12 @@ const Intro = () => {
         };
 
         if (!loginForm.logged) {
-            console.log('try to login', credentials);
             loginCheck(credentials, tryTologin)
         }
 
     }, [credentials, loginForm.logged, setIsLogged]);
 
     useEffect(() => {
-        console.log(userData);
         if(userData.id !== null) {
             dispatch(setLoggedTrue({token: userData.token}));
         }
@@ -50,11 +51,25 @@ const Intro = () => {
     }
 
     return (
-        <section>
-            <h1>Qual a sua tribo?</h1>
-            <p>Para começar a usar seu perfil, primeiro nos informe sobre o que você curte.</p>
-            <Link to="/selecao">next</Link>
-        </section>
+        <PresentationContainer backgroundImage={'./img/rectangle.jpg'}>
+            <CircleIntro1 />
+            <CircleIntro2 />
+            <CircleIntro3 />
+
+            <VerticalAlign>
+                <HeaderLogo>
+                    <img src='./img/logo.png' alt='logo tribes' />
+                </HeaderLogo>
+                <TextintroContainer>
+                    <h1>Qual a sua tribo?</h1>
+                    <p>Para começar a usar seu perfil, primeiro nos informe sobre o que você curte.</p>
+                </TextintroContainer>
+                <NextBar>
+                    <div><span></span> <span></span></div>
+                    <Link to="/selecao"> <img src='./img/arrowRight.png' alt='arrowRight' /> </Link>
+                </NextBar>
+            </VerticalAlign>
+        </PresentationContainer>
     );
 }
 

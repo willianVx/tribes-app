@@ -1,17 +1,19 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import formValidation from '../../helpers/formValidation';
+import FormContainer from '../FormContainer';
+import ButtonsContainerUp from './singupForm.style.js';
 
-const RenderInput = ({input, meta}) =>  (
+const RenderInput = ({input, type, meta}) =>  (
     <div>
-        <input {...input} />
+        <input {...input} type={type} />
         <span>{meta.touched && meta.error}</span>
     </div>
 );
 
 const SingupForm = ({ handleSubmit, valid }) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <FormContainer onSubmit={handleSubmit}>
             <label>Nome
                 <Field type='text' component={RenderInput} name='name' validate={formValidation.name} />
             </label>
@@ -30,9 +32,10 @@ const SingupForm = ({ handleSubmit, valid }) => {
             <label>Digite a senha novamente
                 <Field type='password' component={RenderInput} name='password2' validate={formValidation.password} />
             </label>
-            <button disabled={!valid} type='submit' >cadastrar</button>
-            <button >Login com facebook</button>
-        </form>
+            <ButtonsContainerUp>
+                <button disabled={!valid} type='submit' >cadastrar</button>
+            </ButtonsContainerUp>
+        </FormContainer>
     );
 }
 

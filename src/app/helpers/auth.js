@@ -12,7 +12,6 @@ const validateUser = (user, data) => {
 
 const loginCheck = (user, callback) => {
     getUserByEmail(user.email).then(data => {
-        console.log(user);
         if (!data.length) {
             callback({login: false});
             return;

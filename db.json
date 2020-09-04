@@ -1,39 +1,77 @@
 {
   "users": [
     {
+      "id": 1,
       "name": "jesus",
       "surName": "amora",
-      "username": "amora14",
+      "image": "./img/users/jessica.png",
+      "color": "#81C565",
       "email": "jesus@132.com",
       "password": "123456789",
       "password2": "123456789",
-      "hasInicialized": false,
       "token": "78954312",
       "facebookID": "8791654",
-      "id": 1,
-      "topics": []
+      "hasInicialized": false,
+      "topics": [
+        6,
+        5,
+        4,
+        3
+      ]
     },
     {
+      "id": 2,
       "name": "roberto",
       "surName": "marco",
-      "username": "marco123",
+      "image": "./img/users/jessica.png",
+      "color": "#81C565",
       "email": "marco@123.com",
       "password": "123@123300",
       "password2": "123@123300",
-      "hasInicialized": false,
       "token": "78954312",
       "facebookID": "8791654",
-      "id": 2,
-      "topics": []
+      "hasInicialized": false,
+      "topics": [
+        12,
+        7,
+        8,
+        10,
+        11
+      ]
+    },
+    {
+      "id": 3,
+      "name": "teste",
+      "surName": "teste",
+      "image": "./img/users/jessica.png",
+      "color": "#81C565",
+      "email": "teste@123.com",
+      "password": "123456789",
+      "password2": "123456789",
+      "token": "78954312",
+      "facebookID": "8791654",
+      "hasInicialized": false,
+      "topics": [
+        6,
+        2,
+        3,
+        5
+      ]
     }
   ],
+  "userTopicsId": [],
   "topics": [
     {
       "id": 1,
       "title": "peixes 1",
       "description": "Descrição : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis ante ut nunc mollis pulvinar. Praesent mi enim, dictum et feugiat et, luctus eu magna. Praesent sit amet lacus porttitor, consequat risus eu, venenatis ex.",
       "topicOwnerId": 1,
-      "topicImage": "lorem lorem lorem ",
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": false,
       "comments": [
         {
           "usersId": 2,
@@ -43,14 +81,19 @@
           "usersId": 1,
           "text": "lorem lorem lorem lorem"
         }
-        ]
+      ]
     },
     {
       "id": 2,
       "title": "floresta 2",
       "description": "Descrição : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis ante ut nunc mollis pulvinar. Praesent mi enim, dictum et feugiat et, luctus eu magna. Praesent sit amet lacus porttitor, consequat risus eu, venenatis ex.",
       "topicOwnerId": 2,
-      "topicImage": "lorem lorem lorem ",
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": false,
       "comments": [
         {
           "usersId": 1,
@@ -59,15 +102,24 @@
         {
           "usersId": 2,
           "text": "lorem lorem lorem lorem"
+        },
+        {
+          "usersId": 2,
+          "text": "refrigerante"
         }
-        ]
+      ]
     },
     {
       "id": 3,
       "title": "laranja 3",
       "description": "Descrição : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis ante ut nunc mollis pulvinar. Praesent mi enim, dictum et feugiat et, luctus eu magna. Praesent sit amet lacus porttitor, consequat risus eu, venenatis ex.",
       "topicOwnerId": 2,
-      "topicImage": "lorem lorem lorem ",
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": false,
       "comments": [
         {
           "usersId": 1,
@@ -77,14 +129,19 @@
           "usersId": 2,
           "text": "lorem lorem lorem lorem"
         }
-        ]
+      ]
     },
     {
       "id": 4,
       "title": "biscoito 4",
       "description": "Descrição : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis ante ut nunc mollis pulvinar. Praesent mi enim, dictum et feugiat et, luctus eu magna. Praesent sit amet lacus porttitor, consequat risus eu, venenatis ex.",
       "topicOwnerId": 2,
-      "topicImage": "lorem lorem lorem ",
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
       "comments": [
         {
           "usersId": 1,
@@ -93,42 +150,191 @@
         {
           "usersId": 2,
           "text": "lorem lorem lorem lorem"
+        },
+        {
+          "usersId": 2,
+          "text": "visconde"
         }
-        ]
+      ]
     },
     {
       "id": 5,
       "title": "casa 5",
       "description": "Descrição : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis ante ut nunc mollis pulvinar. Praesent mi enim, dictum et feugiat et, luctus eu magna. Praesent sit amet lacus porttitor, consequat risus eu, venenatis ex.",
       "topicOwnerId": 2,
-      "topicImage": "lorem lorem lorem ",
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
       "comments": [
         {
-          "usersId": 1,
-          "text": "lorem lorem lorem lorem"
+          "usersId": 2,
+          "text": "qual o nome da casa?"
         },
         {
           "usersId": 2,
-          "text": "lorem lorem lorem lorem"
+          "text": "casa 5"
         }
-        ]
+      ]
     },
     {
       "id": 6,
       "title": "casa 6",
       "description": "Descrição : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean venenatis ante ut nunc mollis pulvinar. Praesent mi enim, dictum et feugiat et, luctus eu magna. Praesent sit amet lacus porttitor, consequat risus eu, venenatis ex.",
       "topicOwnerId": 1,
-      "topicImage": "lorem lorem lorem ",
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
       "comments": [
         {
-          "usersId": 1,
-          "text": "lorem lorem lorem lorem"
+          "usersId": 2,
+          "text": "lorem"
         },
         {
           "usersId": 2,
-          "text": "lorem lorem lorem lorem"
+          "text": "casa?"
+        },
+        {
+          "usersId": 2,
+          "text": "sim!"
+        },
+        {
+          "usersId": 2,
+          "text": "tcha!"
         }
-        ]
+      ]
+    },
+    {
+      "title": "olá mundo",
+      "description": "oi eu sou o willian!",
+      "topicOwnerId": 2,
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
+      "comments": [
+        {
+          "usersId": 2,
+          "text": "alo!"
+        },
+        {
+          "usersId": 2,
+          "text": "oi"
+        },
+        {
+          "usersId": 2,
+          "text": "ola!"
+        },
+        {
+          "usersId": 2,
+          "text": "oieee!"
+        }
+      ],
+      "id": 7
+    },
+    {
+      "title": "teste 3",
+      "description": "oi esse é outro teste",
+      "topicOwnerId": 2,
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
+      "comments": [
+        {
+          "usersId": 2,
+          "text": "oi aqui vai um comentario"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "title": "ad",
+      "description": "aqui vai um ad",
+      "topicOwnerId": 2,
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
+      "comments": [
+        {
+          "usersId": 2,
+          "text": "onde está o ad?"
+        },
+        {
+          "usersId": 2,
+          "text": "aqui!"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "title": "ad",
+      "description": "testestet",
+      "topicOwnerId": 2,
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
+      "comments": [
+        {
+          "usersId": 2,
+          "text": "ad123"
+        },
+        {
+          "usersId": 2,
+          "text": "ad555"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "title": "ira 222",
+      "description": "amooor",
+      "topicOwnerId": 2,
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
+      "comments": [
+        {
+          "usersId": 2,
+          "text": "tudo sim"
+        },
+        {
+          "usersId": 2,
+          "text": "222"
+        }
+      ],
+      "id": 11
+    },
+    {
+      "title": "testo 222",
+      "description": "teste 123",
+      "topicOwnerId": 2,
+      "owner": {
+        "image": "./img/users/jessica.png",
+        "name": "Jessica",
+        "color": "#81C565"
+      },
+      "topicImage": "./img/topicImage.png",
+      "comments": [],
+      "id": 12
     }
   ]
 }

@@ -1,0 +1,16 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap');
+    font-family: 'Montserrat', sans-serif;
+}
+
+body a {
+    text-decoration: none;
+    color: white;
+    text-decoration: underline;
+}
+
+body a:active{
+    text-decoration: none;
+}
