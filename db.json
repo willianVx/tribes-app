@@ -32,11 +32,9 @@
       "facebookID": "8791654",
       "hasInicialized": false,
       "topics": [
-        12,
-        7,
-        8,
-        10,
-        11
+        3,
+        4,
+        2
       ]
     },
     {
@@ -57,6 +55,21 @@
         3,
         5
       ]
+    },
+    {
+      "name": "jorge",
+      "surName": "navas",
+      "username": "navas123",
+      "email": "jorge@navas.com",
+      "password": "123456789",
+      "password2": "123456789",
+      "hasInicialized": false,
+      "token": "78954312",
+      "facebookID": "8791654",
+      "image": "./img/users/jessica.png",
+      "color": "#81C565",
+      "topics": [],
+      "id": 4
     }
   ],
   "userTopicsId": [],
@@ -322,19 +335,6 @@
         }
       ],
       "id": 11
-    },
-    {
-      "title": "testo 222",
-      "description": "teste 123",
-      "topicOwnerId": 2,
-      "owner": {
-        "image": "./img/users/jessica.png",
-        "name": "Jessica",
-        "color": "#81C565"
-      },
-      "topicImage": "./img/topicImage.png",
-      "comments": [],
-      "id": 12
     }
   ]
 }

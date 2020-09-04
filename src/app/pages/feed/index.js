@@ -3,7 +3,6 @@ import PresentationContainer from '../../components/presentationContainer';
 import Header from '../../components/Header';
 import { useSelector, useDispatch } from 'react-redux';
 import { ProfileContentContainer } from '../../components/ProfilePic';
-import { getTopicslist } from '../../queries';
 import { setSubsList } from '../../components/topics/topicsSlice';
 import FeedList, {Feeditem, TitleCommentsItem, TextImageItem, FeedListOwnerImage} from '../../components/FeedList';
 import ScrollContainer from '../../components/Scrollcontainer';
